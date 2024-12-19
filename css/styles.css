@@ -1,0 +1,558 @@
+/* load the font files */
+@font-face {
+  font-family: "Showcard";
+  src: url("/fonts/Showcard.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Freeman";
+  src: url("/fonts/Freeman-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Freeman";
+  /* letter-spacing: 1px;
+  word-spacing: 0px; */
+}
+
+:root {
+  scroll-behavior: smooth;
+  font-size: clamp(0.875em, 0.5svw + 0.6em, 1.125em);
+  --gap-size: 1.5rem;
+  /* site theme */
+  --light-gray: #a6a194;
+  --gray: #595958;
+  --dark-gray: #262522;
+  --white: #ffffff;
+  --dark: #000000;
+  --green: #19540e;
+  --dark-green: #16400b;
+  --light-green: #1f590f;
+}
+
+body {
+  margin: 0;
+  background-color: var(--dark-gray);
+}
+
+/* ---------------- Generic rules ---------------- */
+.centre {
+  margin-inline: auto;
+}
+/* general section block padding */
+.footer-group,
+.faq,
+.news-update,
+.tokenomics,
+.how-to-buy,
+.about,
+.hero {
+  padding-block: 5rem;
+}
+
+.generic-heading {
+  letter-spacing: 5px;
+
+  font-family: "Showcard";
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-size: 3em;
+  color: white;
+  text-shadow: 2px 2px var(--dark);
+  transition: transform 0.3s ease;
+  transform-origin: left; /* Ensures proper tilting */
+  transform: rotateZ(-2deg); /* Tilts the card to the right */
+}
+
+.generic-heading:hover {
+  transform: rotateZ(0deg); /* Tilts the card to the right */
+}
+.container {
+  max-inline-size: 90vw;
+  margin-inline: auto;
+}
+
+.stack > * + * {
+  margin-block-start: 1.9em;
+}
+
+.stack-small > * + * {
+  margin-block-start: 0.5em;
+}
+
+.button {
+  letter-spacing: 3px;
+
+  text-align: center;
+  font-family: "Showcard";
+  display: block;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  padding: 0.5em 1em;
+  background-color: var(--light-gray);
+  box-shadow: 7px 7px var(--dark);
+  margin-block-start: 1em;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  transform-origin: center; /* Ensures proper tilting */
+}
+
+.button:hover {
+  background-color: var(--light-green);
+  transform: rotateY(20deg);
+  box-shadow: 0 0;
+}
+
+/* ---------- Navigation secion ------------ */
+.nav {
+  background-color: var(--dark);
+  margin-block-start: 0;
+  padding-block: 0.3rem;
+  position: sticky; /* Make navbar sticky */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.site-nav {
+  display: flex;
+  align-items: baseline;
+  gap: var(--gap-size);
+  padding: 0.5rem;
+  list-style-type: none;
+  /* background-color: #5f4b44; */
+}
+
+.site-nav > li > a {
+  text-align: center;
+  font-family: "Showcard";
+  display: block;
+  padding: 0.5em 1em;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.site-nav > .nav-right {
+  margin-inline-start: auto;
+  margin-top: 0;
+  padding: 0.5em 1em;
+}
+
+.nav .site-nav li {
+  font-size: 0.75em;
+  letter-spacing: 1px;
+}
+
+.nav-button {
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  padding: 0.5em 1em;
+  background-color: var(--dark-gray);
+  box-shadow: 7px 7px var(--dark);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  transform-origin: center; /* Ensures proper tilting */
+}
+
+.nav-button:hover {
+  background-color: var(--light-green);
+  transform: rotateY(20deg);
+  box-shadow: 0 0;
+}
+
+/* ---------- Hero secion ------------ */
+.hero {
+  height: 90vh;
+  background-image: url("/image/hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-content {
+  color: var(--white);
+  width: 80vw;
+  /* background-color: white; */
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wallet-address,
+.hero-link,
+.slogan,
+.name {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.name {
+  font-family: "Showcard";
+  letter-spacing: 4px;
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-size: 3em;
+  color: white;
+  text-shadow: 2px 2px var(--dark);
+  transition: transform 0.3s ease;
+}
+
+.name:hover {
+  transform: scale(1.1); /* Grow the card on hover */
+}
+
+.hero-content .name {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.hero-link {
+  font-size: 3rem;
+}
+
+.hero .wallet-address {
+  background-color: var(--dark-green);
+  font-size: 1.2rem;
+  padding: 0.5em;
+}
+
+.slogan {
+  font-size: 1.2rem;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 2px var(--dark);
+}
+
+/* ---------- About Us section -------------*/
+.about {
+  background-color: var(--dark);
+  color: var(--white);
+  padding-inline: 3rem;
+  text-align: center;
+  background-image: url("/image/bloodyhands-dark.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-group-container {
+  /* padding-inline: 3rem; */
+  max-inline-size: 50em;
+  margin-inline: auto;
+}
+
+.about-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  gap: var(--gap-size);
+  padding: 0.5rem;
+  align-items: stretch;
+}
+
+.about-content {
+  padding: 0.5em 1em;
+  text-align: center;
+  /* flex: 1 1 230px; */
+  flex: 1 1 330px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size);
+}
+
+.about-image {
+  /* overflow: hidden;  */
+}
+.about-image > img {
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  /* background-color: wheat; */
+  align-self: center;
+
+  background-size: cover; /* Ensure image covers the container */
+  background-position: center; /* Center the image */
+  transition: transform 0.4s ease; /* Smooth zoom effect */
+}
+
+.about-image > img:hover {
+  transform: scale(1.2);
+}
+
+.about-link {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.about-detail {
+  flex: 1;
+  font-size: 1.5rem;
+  line-height: 1.9;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- how to buy section -------------*/
+.how-to-buy {
+  background-color: var(--light-gray);
+  color: var(--white);
+  padding-inline: 3rem;
+  text-align: center;
+  background-image: url("/image/bloodyhands-light.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.how-to-buy-groupcontainer {
+  /* padding-inline: 3rem; */
+  max-inline-size: 50em;
+  margin-inline: auto;
+}
+
+.how-to-buy-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-size);
+  padding: 0.5rem;
+  align-items: stretch;
+}
+
+.how-to {
+  letter-spacing: 1px;
+
+  padding: 0.5em 1em;
+  background-color: var(--gray);
+  box-shadow: 9px 9px var(--dark);
+  text-align: center;
+  flex: 1 1 240px;
+  width: 6em;
+  flex-grow: 0;
+  min-height: 200px;
+
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth effect */
+  /* cursor: pointer; */
+  flex-shrink: 0; /* Prevents cards from shrinking */
+}
+
+.how-to:hover {
+  transform: scale(1.2); /* Grow the card on hover */
+  background-color: var(--dark-gray); /* Optional: Change color on hover */
+}
+.how-to > .how-to-label {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px var(--dark);
+}
+.how-to > .how-to-detail {
+  text-transform: capitalize;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+/* ---------- tokenomics -------------*/
+.tokenomics {
+  background-color: var(--gray);
+  color: var(--white);
+  padding-inline: 3rem;
+  text-align: center;
+  background-image: url("/image/bloodyhands.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  letter-spacing: 1px;
+}
+
+.tokenomics-groupcontainer {
+  /* padding-inline: 3rem; */
+  max-inline-size: 50em;
+  margin-inline: auto;
+}
+
+.tokenomics-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-size);
+  padding: 0.5rem;
+  align-items: stretch;
+}
+
+.tokenomics-container {
+  padding: 0.5em 1em;
+  background-color: var(--light-gray);
+  box-shadow: 9px 9px var(--dark);
+  text-align: center;
+  flex: 1 1 240px;
+  width: 6em;
+  flex-grow: 0;
+  min-height: 120px;
+
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth effect */
+  /* cursor: pointer; */
+  flex-shrink: 0; /* Prevents cards from shrinking */
+}
+
+.tokenomics-container:hover {
+  transform: scale(1.2); /* Grow the card on hover */
+  background-color: var(--dark-gray); /* Optional: Change color on hover */
+}
+
+.tokenomics-container .heading {
+  text-transform: capitalize;
+}
+.tokenomics-container .detail {
+  text-transform: capitalize;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+.tokenomics-container > p.wallet-address {
+  text-transform: uppercase;
+}
+
+/* -------------- new update --------------- */
+.news-update {
+  color: var(--white);
+  text-align: center;
+}
+
+.news-container {
+  /* padding-inline: 3rem; */
+  max-inline-size: 50em;
+  margin-inline: auto;
+}
+.news-item {
+  font-family: "Freeman";
+  line-height: 2;
+  /* text-shadow: 2px 2px 3px var(--dark-gray); */
+  color: var(--light-gray);
+  letter-spacing: 0.5px;
+}
+
+.video-container {
+  background-color: var(--gray);
+  position: relative;
+  /* width: 60vw;
+  height: calc(60vw * 0.5625); */
+  padding: 10px;
+  max-width: fit-content;
+  overflow: hidden; /* Ensure no overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+}
+.video {
+  height: auto; /* Make the video fit the container's height */
+  width: 60vw; /* Maintain the aspect ratio */
+}
+
+/* ------------ faq ------------- */
+.faq {
+  background-color: var(--dark);
+  color: var(--light-gray);
+  padding-inline: 3rem;
+  text-align: center;
+}
+
+.faq-container {
+  border: 2px solid var(--gray);
+  margin-inline: auto;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+
+  font-size: 1.5rem;
+  text-align: start;
+}
+.faq-group {
+  max-inline-size: 50em;
+  margin-inline: auto;
+}
+
+.faq-question {
+  text-transform: uppercase;
+}
+.faq-answer {
+  text-transform: capitalize;
+}
+
+/* ------------ footer ------------- */
+.footer-group {
+  /* background-color: var(--gray); */
+  color: var(--light-gray);
+  /* padding-inline: 3rem; */
+  text-align: center;
+  max-inline-size: 80em;
+  margin-inline: auto;
+  background-image: url("/image/bloodyhands.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer-group .footer-message {
+  max-inline-size: 20em;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-inline: auto;
+  background-color: var(--dark);
+  padding: 0.5em;
+  line-height: 1.6;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.footer-group .footer-message:hover {
+  transform: scale(1.1); /* Grow the card on hover */
+}
+
+.footer-link-container {
+  display: flex;
+  direction: inline-start;
+  justify-content: space-evenly;
+  max-inline-size: 30em;
+  margin-inline: auto;
+}
+
+.social-button {
+  border: none;
+  padding: 1em 3em;
+  display: block;
+  text-align: center;
+  background: var(--light-gray);
+  box-shadow: 7px 7px var(--dark);
+  margin-block-start: 1em;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  transform-origin: center; /* Ensures proper tilting */
+}
+
+.social-button:hover {
+  background-color: var(--light-green);
+  transform: rotateY(20deg);
+  box-shadow: 0 0;
+  cursor: pointer;
+}
+
+.social-button img {
+  width: 3em; /* Adjust size */
+  height: auto;
+  border-radius: 5px; /* Optional for rounded corners */
+}
