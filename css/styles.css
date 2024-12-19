@@ -19,8 +19,6 @@
   box-sizing: border-box;
   margin: 0;
   font-family: "Freeman";
-  /* letter-spacing: 1px;
-  word-spacing: 0px; */
 }
 
 :root {
@@ -43,10 +41,6 @@ html {
   margin: 0;
   background-color: var(--dark-gray);
   margin-inline: auto;
-}
-
-.pagecontent {
-  /* text-align: center; */
 }
 
 .container {
@@ -176,7 +170,7 @@ html {
 
 /* ---------- Hero secion ------------ */
 .hero {
-  height: 100vh;
+  height: 90vh;
   background-image: url("/image/hero.jpeg");
   background-size: cover;
   background-position: center;
@@ -281,9 +275,6 @@ html {
   gap: var(--gap-size);
 }
 
-.about-image {
-  /* overflow: hidden;  */
-}
 .about-image > img {
   width: 100%;
   max-width: 250px;
@@ -438,28 +429,27 @@ html {
 /* -------------- new update --------------- */
 .news-update {
   color: var(--white);
-  text-align: center;
 }
 
 .news-container {
-  /* padding-inline: 3rem; */
-  max-inline-size: 50em;
+  width: 98vw;
   margin-inline: auto;
+  text-align: center;
 }
+
 .news-item {
+  max-width: 70vw;
+  
   font-family: "Freeman";
   line-height: 2;
-  /* text-shadow: 2px 2px 3px var(--dark-gray); */
   color: var(--light-gray);
   letter-spacing: 0.5px;
 }
 
 .video-container {
-  background-color: var(--gray);
   position: relative;
-  /* padding: 10px; */
   max-width: fit-content;
-  overflow: hidden; /* Ensure no overflow */
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
