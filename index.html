@@ -3,208 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Luigi 3D</title>
+    <title>Penguins</title>
+    <meta name="description" content="Penguin coin" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <nav id="nav" class="nav">
-      <div class="container">
-        <ul class="site-nav">
-          <li class="nav-button"><a href="#">Home</a></li>
-          <li class="nav-button"><a href="#how-to-buy">How to buy</a></li>
-          <li class="nav-button"><a href="#about">About us</a></li>
-          <li class="nav-right button"><a href="#">Buy</a></li>
-        </ul>
+    <div class="video-container">
+      <video src="/video/penguin.mp4" autoplay muted loop></video>
+      <div class="content-container">
+        <div class="heading"><h1>PENGU 3D</h1></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="main stack">
+          <div class="mc highlight">MC: $82848739</div>
+          <div class="ca highlight" id="ca" onclick="copyToClipboard()">
+            CA: 4fJhf6j4D86aA3A7eX8cZzjLnkckxG45ABQ9tZeq8GiZ
+          </div>
+          <div class="dex-link highlight">
+            <a href="/">DEX SDREENER</a>
+          </div>
+        </div>
+        <div class="empty"></div>
+        <div class="footer-link-container">
+          <button class="social-button">
+            <img src="image/x-white.png" alt="X website" />
+          </button>
+          <button class="social-button">
+            <img src="image/telegram.png" alt="telegram website" />
+          </button>
+        </div>
+        <div class="footer"><h2>copyright notice</h2></div>
       </div>
-    </nav>
-    <main>
-      <section id="hero" class="hero">
-        <div class="container centre">
-          <div class="hero-content stack">
-            <h1 class="name">Free Luigi 3D</h1>
-            <p class="slogan">
-              This is the hottest narrative in crypto right now...
-            </p>
+    </div>
+    <script>
+      function copyToClipboard() {
+        // Get the div element and its original content
+        const caElement = document.getElementById("ca");
+        const originalText = caElement.innerText;
 
-            <a href="#" class="hero-link button">buy</a>
+        // Change the content to "Copied"
+        caElement.innerText = "Copied";
 
-            <div class="wallet-address">CA: 388W8DKE8JPWEJ984EIH89EW98WH9E</div>
-          </div>
-        </div>
-      </section>
-      <section id="about" class="about">
-        <div class="container centre">
-          <div class="about-group-container">
-            <div class="about-group">
-              <div class="about-image">
-                <img src="image/mascot.png" alt="luigi mascot" />
-              </div>
-              <div class="about-content centre">
-                <div class="generic-heading">about <br />free luigi 3D</div>
-                <hr style="width: 100%" />
-                <div class="about-detail">
-                  Welcome to Free Luigi 3D! Whether you believe the CEO shooter
-                  Luigi Mangione is innocent or guilty, one thing is for sure -
-                  this is the hottest narrative in crypto right now. Join the
-                  movement, dive into the memes, and ride the wave with the
-                  buzzing community. The Free Luigi 3D experience is here, and
-                  it's unstoppable!
-                </div>
-                <hr style="width: 100%" />
-                <a href="#" class="about-link button">more info</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        // Select the text inside the div
+        const text = originalText;
 
-      <section id="news-update" class="news-update">
-        <div class="news-container stack">
-          <h2 class="generic-heading">NEWS UPDATE</h2>
-          <div class="video-container">
-            <video autoplay muted loop class="video">
-              <source src="video/luigivideocontentsite.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <h2 class="news-item centre">
-            The debate rages on, with many standing by him and insisting he's
-            innocent. Questions about evidence and accuser's motives have
-            sparked a wave of support online. The case remains a hot topic as
-            the fight for truth continues!
-          </h2>
-        </div>
-      </section>
+        // Create a temporary input element for copying the text
+        const tempInput = document.createElement("input");
+        document.body.appendChild(tempInput);
+        tempInput.value = text;
+        tempInput.select(); // Select the text in the input
+        document.execCommand("copy"); // Copy the selected text to the clipboard
 
-      <section id="how-to-buy" class="how-to-buy">
-        <div class="container centre">
-          <div class="how-to-buy-groupcontainer stack">
-            <div class="generic-heading">How to buy coin</div>
+        // Remove the temporary input element
+        document.body.removeChild(tempInput);
 
-            <div class="how-to-buy-group">
-              <div class="how-to stack-small">
-                <div class="how-to-label">1</div>
-                <hr />
-                <p class="how-to-detail">
-                  Install the Phantom Wallet browser extension and follow the
-                  steps to create a new wallet
-                </p>
-              </div>
-
-              <div class="how-to stack-small">
-                <div class="how-to-label">2</div>
-                <hr />
-                <p class="how-to-detail">
-                  Copy your wallet address and fund it with Solana. If you don't
-                  have solana you can buy some on a centralized exchange like
-                  Coinbase
-                </p>
-              </div>
-              <div class="how-to stack-small">
-                <div class="how-to-label">3</div>
-                <hr />
-                <p class="how-to-detail">
-                  Click the "Buy Button" button on this page to be redirected to
-                  the Raydium swaps page for Free Luigi 3D
-                </p>
-              </div>
-              <div class="how-to stack-small">
-                <div class="how-to-label">4</div>
-                <hr />
-                <p class="how-to-detail">
-                  Select Solana as the token you want to swap. For the token you
-                  want to buy, enter the contract address for Free Luigi 3d
-                </p>
-              </div>
-              <div class="how-to stack-small">
-                <div class="how-to-label">5</div>
-                <hr />
-                <p class="how-to-detail">
-                  Enter how much you want to swap for Free Luigi 3D
-                </p>
-              </div>
-              <div class="how-to stack-small">
-                <div class="how-to-label">6</div>
-                <hr />
-                <p class="how-to-detail">
-                  Confirm the transaction and wait for it to be processed
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="tokenomics" class="tokenomics">
-        <div class="container">
-          <div class="tokenomics-group-container stack">
-            <h2 class="generic-heading">tokenomics</h2>
-            <div class="tokenomics-group">
-              <div class="tokenomics-container stack-small">
-                <h2 class="heading">token detail</h2>
-                <hr />
-                <p class="detail">
-                  Tokens are burnt, and Contract ownership is revoked
-                </p>
-              </div>
-              <div class="tokenomics-container stack-small">
-                <h2 class="heading">Token name</h2>
-                <hr />
-                <p class="detail">Freeluigi3D</p>
-              </div>
-              <div class="tokenomics-container stack-small">
-                <h2 class="heading">Total supply</h2>
-                <hr />
-                <p class="detail">1,000,000,000</p>
-              </div>
-              <div class="tokenomics-container stack-small">
-                <h2 class="heading">Token Address</h2>
-                <hr />
-                <p class="detail wallet-address">ca:82n4r8skdj 9834eirdwe</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="news-update" class="news-update">
-        <div class="news-container stack">
-          <h2 class="generic-heading">NEWS UPDATE</h2>
-          <div class="video-container">
-            <video autoplay muted loop class="video">
-              <source src="video/luigicourtscene.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <h2 class="news-item centre">
-            Crypto outlaw Luigi disrupts trial with gun theatrics, leaving the
-            courtroom in chaos. Meme coin rivals Doge and Pepe remain silent on
-            the spectacle.
-          </h2>
-        </div>
-      </section>
-      <footer id="footer">
-        <div class="container">
-          <div class="footer-group centre stack">
-            <h2 class="generic-heading">Join the community</h2>
-            <p class="footer-message">
-              Join the Free Luigi 3D club and let's have fun while making bank!
-              Follow us for updates and all Buzz!
-            </p>
-            <div class="footer-link-container">
-              <button class="social-button">
-                <img src="image/x-white.png" alt="X website" />
-              </button>
-              <button class="social-button">
-                <img src="image/telegram.png" alt="telegram website" />
-              </button>
-              <button class="social-button">
-                <img src="image/dexscreener.png" alt="dexscreener website" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
+        // Revert the content back to the original after 2 seconds
+        setTimeout(() => {
+          caElement.innerText = originalText;
+        }, 2000); // 2000 milliseconds (2 seconds)
+      }
+    </script>
   </body>
 </html>
