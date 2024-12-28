@@ -3,39 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Penguins</title>
-    <meta name="description" content="Penguin coin" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <title>SQUID TOKEN</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-   
-    <script>
-      function copyToClipboard() {
-        // Get the div element and its original content
-        const caElement = document.getElementById("ca");
-        const originalText = caElement.innerText;
+    <nav id="nav" class="nav">
+      <ul class="site-nav container">
+        <li class="logo"><a href="#hero-section">squid game</a></li>
+        <li class="buy-button"><a href="#">buy</a></li>
+      </ul>
+    </nav>
 
-        // Change the content to "Copied"
-        caElement.innerText = "Copied";
+    <section id="hero-section" class="hero-section">
+      <div class="container centre">
+        <div class="hero-content">
+          <div class="hero-image">
+            <img src="/image/squid-image.png" alt="squid mascot" />
+          </div>
+          <div class="hero-writeup stack">
+            <div class="intro">
+              <h1>are you ready?</h1>
+              <p>the hotest tv series now as meme coin</p>
+            </div>
+            <div class="cta stack-small">
+              <a href="">buy</a>
+              <p class="ca">
+                CA: <span class="ca-text">83U98HS984HJHR8H3J8FEU</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Select the text inside the div
-        const text = originalText;
+    <section id="video-section" class="video-section stack">
+      <h2 class="heading">meet the agent</h2>
+      <div class="video-container">
+        <video autoplay muted loop class="video">
+          <source src="/image/squid-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="video-text">you don't wanna find out!</p>
+      <a href="">buy</a>
+    </section>
 
-        // Create a temporary input element for copying the text
-        const tempInput = document.createElement("input");
-        document.body.appendChild(tempInput);
-        tempInput.value = text;
-        tempInput.select(); // Select the text in the input
-        document.execCommand("copy"); // Copy the selected text to the clipboard
+    <section id="tokenomics" class="tokenomics">
+      <div class="tokenomics-group-container stack">
+        <h2 class="heading">tokenomics</h2>
+        <div class="tokenomics-group stack">
+          <div class="tokenomics-container stack-small">
+            <h2 class="heading">token detail</h2>
 
-        // Remove the temporary input element
-        document.body.removeChild(tempInput);
+            <p class="detail">
+              Tokens are burnt, and Contract ownership is revoked
+            </p>
+          </div>
+          <div class="tokenomics-container stack-small">
+            <h2 class="heading">Token name</h2>
 
-        // Revert the content back to the original after 2 seconds
-        setTimeout(() => {
-          caElement.innerText = originalText;
-        }, 2000); // 2000 milliseconds (2 seconds)
-      }
-    </script>
+            <p class="detail">SQUID-GAME</p>
+          </div>
+          <div class="tokenomics-container stack-small">
+            <h2 class="heading">Total supply</h2>
+
+            <p class="detail">1,000,000,000</p>
+          </div>
+          <div class="tokenomics-container stack-small">
+            <h2 class="heading">Token Address</h2>
+
+            <p class="detail wallet-address">82n4r8skdj 9834eirdwe</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer">
+      <div class="footer-group stack">
+        <h2 class="heading">Join the community</h2>
+        <p class="footer-message">
+          Join the club <br />
+          and let's have fun <br />
+          while making bank! <br />
+          Follow us for <br />
+          updates and all Buzz!
+        </p>
+        <div class="footer-link-container">
+          <a href="">
+            <img src="/image/telegram-white.png" alt="telegram" />
+          </a>
+          <a href="">
+            <img src="/image/x-white.png" alt="x" />
+          </a>
+          <a href="">
+            <img src="/image/dexscreener-white.png" alt="dexscreener" />
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

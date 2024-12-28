@@ -1,0 +1,379 @@
+/* load the font files */
+@font-face {
+  font-family: "manrope";
+  src: url("/fonts/manrope-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "octopus game";
+  src: url("/fonts/OctopusGame-RpWV3.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "kenny future";
+  src: url("/fonts/Kenney\ Future\ Narrow.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  scroll-behavior: smooth;
+  font-size: clamp(0.3em, 0.5svw + 0.5em, 1.125em);
+  /* font-size: 0.5em; */
+
+  /* site theme */
+  --black: hsl(0deg 0% 0%);
+  --gray: hsl(0deg 0% 24%);
+  --white: hsl(0deg 0% 100%);
+  --green: hsl(168deg 71% 19%);
+  --pink: hsl(338deg 77% 58%);
+}
+
+body,
+html {
+  margin: 0;
+  color: var(--white);
+}
+
+.stack > * + * {
+  margin-block-start: 2em;
+}
+
+.stack-small > * + * {
+  margin-block-start: 0.7em;
+}
+
+.container {
+  max-inline-size: 90vw;
+  margin-inline: auto;
+}
+
+/*  ------------ navigaion -------------- */
+
+.nav {
+  background-color: var(--black);
+  margin-block-start: 0;
+  padding-block: 0.3rem;
+  position: sticky; /* Make navbar sticky */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.site-nav {
+  display: flex;
+  align-items: baseline;
+  padding: 0.5rem;
+  list-style-type: none;
+  /* background-color: wheat; */
+}
+
+.site-nav a {
+  font-size: 1.5em;
+  text-align: center;
+  font-family: "octopus game";
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.site-nav .buy-button {
+  margin-inline-start: auto;
+  background-color: var(--pink);
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  padding: 0.6em 1.2em;
+}
+
+.site-nav .buy-button:hover {
+  transform: scale(1.2);
+}
+
+.site-nav .buy-button a {
+  font-family: "kenny future";
+}
+
+/*  ------------ hero -------------- */
+
+.hero-section {
+  background-color: var(--black);
+  text-align: center;
+  background-image: url("/image/background-1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  padding-block: 4em;
+  align-items: stretch;
+  gap: 0.5em;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  flex: 1;
+  width: 100%; /* Sets the circle's width */
+  min-width: 250px;
+  max-width: 450px;
+  overflow: hidden; /* Ensures the clipped content doesn't overflow */
+  border-radius: 50%; /* Optional: Adds smooth edges */
+}
+
+.hero-image img {
+  width: 100%; /* Ensures the image fills the container width */
+  height: auto;
+  object-fit: cover; /* Fills the clipped area without distortion */
+  clip-path: circle(50% at 50% 50%); /* Clips the image into a perfect circle */
+  display: block; /* Removes inline whitespace */
+}
+
+.hero-writeup {
+  min-width: 300px;
+  padding: 0.5em 0.5em;
+  flex: 1;
+  /* background-color: blueviolet; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 7em;
+}
+
+.intro {
+  padding: 0.5em 0.5em;
+  flex: 1;
+  /* background-color: blueviolet; */
+}
+.intro h1 {
+  font-family: "octopus game";
+  font-size: 3.5em;
+  color: var(--pink);
+}
+
+.intro p {
+  font-family: "manrope";
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px var(--black);
+  letter-spacing: 0.5px;
+}
+
+.cta {
+  /* background-color: rgb(67, 55, 79); */
+}
+
+.cta a {
+  font-family: "kenny future";
+  color: var(--white);
+  text-decoration: none;
+  padding: 1em 2em;
+  display: inline-block;
+  background-color: var(--pink);
+  border-radius: 5px;
+  font-size: 2em;
+  transition: transform 0.3s ease;
+  margin-block-end: 1em;
+}
+
+.cta a:hover {
+  transform: scale(1.2);
+}
+
+.cta .ca {
+  font-family: "manrope";
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px var(--black);
+}
+
+/*  ------------ video -------------- */
+.video-section {
+  background-color: var(--gray);
+  text-align: center;
+  background-image: url("/image/background-4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: 6em;
+  margin-inline: auto;
+}
+
+.video-section h2 {
+  font-family: "octopus game";
+  font-size: 3em;
+}
+
+.video-section .video-container {
+  position: relative;
+  max-width: fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+}
+
+.video-section .video {
+  height: auto; /* Make the video fit the container's height */
+  width: 100vw; /* Maintain the aspect ratio */
+}
+
+.video-section p {
+  font-family: "octopus game";
+  font-size: 2em;
+}
+
+.video-section a {
+  font-family: "kenny future";
+  color: var(--white);
+  text-decoration: none;
+  padding: 1em 2em;
+  display: inline-block;
+  background-color: var(--pink);
+  border-radius: 5px;
+  font-size: 2em;
+  transition: transform 0.3s ease;
+  margin-block-end: 1em;
+}
+
+.video-section a:hover {
+  transform: scale(1.2);
+}
+/*  ------------ tokenomics -------------- */
+.tokenomics {
+  background-color: var(--black);
+  text-align: center;
+  background-image: url("/image/background-3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tokenomics-group-container {
+  padding-block: 6em;
+  margin-inline: auto;
+}
+
+.tokenomics-group-container > h2 {
+  font-family: "octopus game";
+  font-size: 3em;
+}
+
+.tokenomics-group {
+  margin-inline: auto;
+  max-width: fit-content;
+}
+
+.tokenomics-container {
+  max-width: 90vw;
+  border-left: 3px solid var(--pink);
+  background-color: var(--gray);
+  padding-block: 1.5em;
+  padding-inline: 5em;
+  transition: background-color 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2); /* Blurred edges */
+}
+
+.tokenomics-container:hover {
+  border-left: 3px solid var(--white);
+  background-color: var(--pink);
+  padding-block: 1.5em;
+  padding-inline: 5em;
+}
+
+.tokenomics-container .heading {
+  font-family: "octopus game";
+  font-size: 1.7em;
+}
+.tokenomics-container .detail {
+  font-family: "manrope";
+  font-size: 1.7em;
+}
+
+/*  ------------ footer -------------- */
+.footer {
+  background-color: var(--pink);
+  text-align: center;
+  background-image: url("/image/background-2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer-group {
+  padding-block: 6em;
+  margin-inline: auto;
+}
+
+.footer h2 {
+  font-family: "octopus game";
+  font-size: 3em;
+}
+
+.footer .footer-message {
+  max-width: 80vw;
+  background-color: var(--gray);
+  font-size: 2em;
+  /* font-family: "manrope"; */
+  font-family: "octopus game";
+  margin-inline: auto;
+  max-width: fit-content;
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2); /* Blurred edges */
+  transform-origin: center; /* Ensures proper tilting */
+  transform: rotateZ(2deg);
+}
+
+.footer .footer-message:hover {
+  transform: rotateZ(0deg);
+}
+
+.footer-link-container {
+  display: flex;
+  direction: inline-start;
+  justify-content: space-evenly;
+  margin-inline: auto;
+  gap: 4em;
+  max-width: max-content;
+  margin-top: 5em;
+}
+
+.footer-link-container a {
+  border-radius: 5px;
+  border: 2px solid var(--black);
+  padding: 0.5em 2em;
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Vertically center the image */
+  justify-content: center; /* Horizontally center the image */
+  transition: transform 0.3s ease;
+  background-color: var(--black);
+}
+
+.footer-link-container img {
+  width: 2em;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.footer-link-container a:hover {
+  transform: scale(1.2);
+  /* border: none; */
+}
